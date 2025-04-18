@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="doctorApp">
+<head>
+  <meta charset="UTF-8">
+  <title>pradhaph hospital</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="angular.js"></script>
+</head>
+<body ng-controller="MainController">
+  <div class="container">
+    <div ng-if="!isLoggedIn">
+      <h1>PRADHAPH HOSPITAL</h1>
+      <h2>Appointment Booking </h2>
+      <h3>Login</h3>
+      <form ng-submit="login()">
+        <input type="text" placeholder="Username" ng-model="loginData.username" required>
+        <input type="password" placeholder="Password" ng-model="loginData.password" required>
+        <button type="submit">Login</button>
+      </form>
+
+      <h3>Signup</h3>
+      <form ng-submit="signup()">
+        <input type="text" placeholder="New Username" ng-model="signupData.username" required>
+        <input type="password" placeholder="New Password" ng-model="signupData.password" required>
+        <button type="submit">Signup</button>
+      </form>
+      <h4>Every Heartbeat We Heal, Every Smile We Care</h3>
+    </div>
+    <div ng-if="isLoggedIn">
+      <h1>Book a Doctor Appointment</h1>
+
+      <form name="appointmentForm" ng-submit="bookAppointment()" novalidate >
+        <label>Full Name:</label>
+        <input type="text" ng-model="appointment.name" required>
+
+        <label>Doctor:</label>
+        <select ng-model="appointment.doctor" required>
+          <option ng-repeat="doctor in doctors" value="{{doctor.name}}">{{doctor.name}} - {{doctor.specialization}}</option>
+        </select>
+
+        <label>Date:</label>
+        <input type="date" ng-model="appointment.date" required>
+
+        <label>Time:</label>
+        <input type="time" ng-model="appointment.time" required>
+
+        <button type="submit">Book Appointment</button>
+      </form>
+
+      <div class="confirmation" ng-if="confirmation">
+        <h2>Appointment Confirmed!</h2>
+        <p>Name: {{confirmation.name}}</p>
+        <p>Doctor: {{confirmation.doctor}}</p>
+        <p>Date: {{confirmation.date}}</p>
+        <p>Time: {{confirmation.time}}</p>
+      </div>
+
+      <button class="logout" ng-click="logout()">Logout</button>
+    </div>
+  </div>
+</body>
+</html>
