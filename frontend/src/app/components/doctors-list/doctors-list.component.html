@@ -48,7 +48,9 @@
                 <span class="truncate">{{ doctor.experience }} years</span>
               </button>
             </td>
-            <td class="h-[72px] px-4 py-2 w-60 text-[#4e7397] text-sm font-bold leading-normal tracking-[0.015em]">
+            <td class="h-[72px] px-4 py-2 w-60 text-[#4e7397] text-sm font-bold leading-normal tracking-[0.015em]"
+            [routerLink]="['doctors/appointment', doctor.id]"
+            >
               View details
             </td>
             <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">

@@ -1,0 +1,79 @@
+<app-header/>
+<div class="max-w-md mx-auto p-6 mt-6 bg-white rounded-xl shadow">
+    <h2 class="text-lg font-bold mb-4">Update Doctor</h2>
+    <form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
+        <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <label class="flex flex-col min-w-40 flex-1">
+              <p class="text-[#0e141b] text-base font-medium leading-normal pb-2">Full Name*</p>
+              <input
+                formControlName="name"
+                placeholder="Enter your full name"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e141b] focus:outline-0 focus:ring-0 border border-[#d0dbe7] bg-slate-50 focus:border-[#d0dbe7] h-14 placeholder:text-[#4e7397] p-[15px] text-base font-normal leading-normal"
+              />
+            </label>
+          </div>
+          <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <label class="flex flex-col min-w-40 flex-1">
+              <p class="text-[#0e141b] text-base font-medium leading-normal pb-2">Specialization*</p>
+              <select
+                formControlName="specialization"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e141b] focus:outline-0 focus:ring-0 border border-[#d0dbe7] bg-slate-50 focus:border-[#d0dbe7] h-14 placeholder:text-[#4e7397] p-[15px] text-base font-normal leading-normal"
+              >
+                <option value="">Select your specialization</option>
+                <option value="Cardiologist">Cardiologist</option>
+                <option value="Dermatologist">Dermatologist</option>
+                <option value="Endocrinologist">Endocrinologist</option>
+                <option value="Gastroenterologist">Gastroenterologist</option>
+                <option value="Hematologist">Hematologist</option>
+                <option value="Neurologist">Neurologist</option>
+                <option value="Oncologist">Oncologist</option>
+                <option value="Pediatrician">Pediatrician</option>
+                <option value="Psychiatrist">Psychiatrist</option>
+                <option value="Rheumatologist">Rheumatologist</option>
+              </select>
+            </label>
+          </div>
+    
+          <!-- Experience -->
+          <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <label class="flex flex-col min-w-40 flex-1">
+              <p class="text-[#0e141b] text-base font-medium leading-normal pb-2">Experience*</p>
+              <input
+                formControlName="experience"
+                type="number"
+                placeholder="Enter your years of experience"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e141b] focus:outline-0 focus:ring-0 border border-[#d0dbe7] bg-slate-50 focus:border-[#d0dbe7] h-14 placeholder:text-[#4e7397] p-[15px] text-base font-normal leading-normal"
+              />
+            </label>
+          </div>
+    
+          <!-- Contact Info -->
+          <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <label class="flex flex-col min-w-40 flex-1">
+              <p class="text-[#0e141b] text-base font-medium leading-normal pb-2">Contact Info*</p>
+              <input
+                formControlName="contact_info"
+                placeholder="Enter your email"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e141b] focus:outline-0 focus:ring-0 border border-[#d0dbe7] bg-slate-50 focus:border-[#d0dbe7] h-14 placeholder:text-[#4e7397] p-[15px] text-base font-normal leading-normal"
+              />
+            </label>
+          </div>
+          <div class="px-4 py-4 flex justify-between gap-4">
+      <button
+        type="submit"
+        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 font-semibold rounded-xl"
+      >
+        Save Changes
+      </button>
+      <button
+      type="button"
+      (click) = "onDelete()"
+      class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 font-semibold rounded-xl "
+    >
+      Delete
+    </button>
+  
+          </div>
+    </form>
+  </div>
+  

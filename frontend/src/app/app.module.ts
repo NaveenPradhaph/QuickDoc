@@ -20,7 +20,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppointmentsAllComponent } from './appointments-all/appointments-all.component';
+import { AppointmentsListComponent } from './components/appointments-list/appointments-list.component';
+import { DoctorUpdateComponent } from './doctor-update/doctor-update.component';
+import { DoctorAppointmentComponent } from './doctor-appointment/doctor-appointment.component';
 
 
 @NgModule({
@@ -34,6 +38,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     SpecializationComponent,
     RegisterComponent,
     AppointmentsComponent,
+    AppointmentsAllComponent,
+    AppointmentsListComponent,
+    DoctorUpdateComponent,
+    DoctorAppointmentComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +51,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatPaginatorModule,
     ReactiveFormsModule,
     MatFormFieldModule,
+    BrowserAnimationsModule,
     MatInputModule,
     MatSelectModule,
     MatButtonModule,

@@ -17,4 +17,19 @@ export class DoctorListService {
     console.log(doctor);
     return this.http.post(this.apiUrl, doctor);
   }
+
+  getDoctorById(id:number){
+    return this.http.get<Doctor>(`http://localhost:3000/api/doctors/${id}`);
+  }
+
+  updateDoctor(id: number, updatedData: any){
+    console.log(updatedData);
+    return this.http.put(`${this.apiUrl}/${id}`, updatedData);
+  }
+
+  deleteDoctor(id:number){
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+  
 }
+

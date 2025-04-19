@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute , Router} from '@angular/router';
 import { Doctor } from '../types/doctor.type';
 import { DoctorListService } from '../services/doctor-list.service';
 
@@ -11,7 +11,7 @@ import { DoctorListService } from '../services/doctor-list.service';
 })
 export class SpecializationComponent {
   specialty = "";
-  constructor(private route : ActivatedRoute , private doctorListService : DoctorListService){}
+  constructor(private route : ActivatedRoute , private doctorListService : DoctorListService, private router : Router){}
 
   ngOnInit(): void {
     this.specialty = this.route.snapshot.paramMap.get('specialty') || '';
@@ -46,4 +46,7 @@ export class SpecializationComponent {
       this.currentPage = Math.max(0, Math.min(this.currentPage + delta, this.totalPages - 1));
     }
 
+    goDoctorAppointment(id:number){
+      this.router.navigate([`doctors/appointment/${id}`])
+    }
 }

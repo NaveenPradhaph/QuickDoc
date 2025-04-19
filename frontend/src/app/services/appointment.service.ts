@@ -14,4 +14,17 @@ export class AppointmentService {
     return this.http.post<Appointment>(this.apiUrl, appointment);
   }
 
+  getAppointments(){
+    return this.http.get<Appointment[]>(this.apiUrl);
+  }
+
+  updateStatus(id: number, status: string) {
+    return this.http.put(`${this.apiUrl}/${id}/`, { status });
+  }
+
+  deleteAppointment(id:number){
+    return this.http.delete(`${this.apiUrl}/${id}/`);
+  }
+
+
 }
