@@ -1,0 +1,43 @@
+<app-header/>
+<div class="container mx-auto py-5 px-4 mr-10">
+    <div class="max-w-md mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-center">Schedule an appointment</h2>
+  
+      <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill" class="w-full mb-4">
+          <mat-label>Select a doctor</mat-label>
+          <mat-select formControlName="doctor_id">
+            <mat-option *ngFor="let d of doctors" [value]="d.id">{{ d.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="w-full mb-4">
+          <mat-label>Available time slots</mat-label>
+          <mat-select formControlName="timeSlot">
+            <mat-option *ngFor="let slot of timeSlots" [value]="slot">{{ slot }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="w-full mb-4">
+          <mat-label>Patient's name</mat-label>
+          <input matInput formControlName="patient_name" placeholder="Enter patient's name" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="w-full mb-4">
+          <mat-label>Appointment's date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="date" placeholder="Choose a date" />
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="w-full mb-6">
+          <mat-label>Email address</mat-label>
+          <input matInput formControlName="contact_info" placeholder="Enter email" />
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" class="w-full" type="submit">
+          Book Appointment
+        </button>
+      </form>
+    </div>
+  </div>

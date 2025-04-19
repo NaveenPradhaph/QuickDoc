@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+/* @import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities'; */
+@import '@angular/material/prebuilt-themes/indigo-pink.css'; 
+/* html, body { height: 100%; } */
+/* body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+/* @container(max-width:56px){.table-0f564ce8-7a4f-444d-a44c-c510cb50f95e-column-56{display: none;}}
+@container(max-width:176px){.table-0f564ce8-7a4f-444d-a44c-c510cb50f95e-column-176{display: none;}}
+@container(max-width:296px){.table-0f564ce8-7a4f-444d-a44c-c510cb50f95e-column-296{display: none;}}
+@container(max-width:416px){.table-0f564ce8-7a4f-444d-a44c-c510cb50f95e-column-416{display: none;}}
+@container(max-width:536px){.table-0f564ce8-7a4f-444d-a44c-c510cb50f95e-column-536{display: none;}} */
