@@ -3,7 +3,7 @@
 /* @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities'; */
-
+@import '@angular/material/prebuilt-themes/indigo-pink.css'; 
 /* html, body { height: 100%; } */
 /* body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 /* @container(max-width:56px){.table-0f564ce8-7a4f-444d-a44c-c510cb50f95e-column-56{display: none;}}

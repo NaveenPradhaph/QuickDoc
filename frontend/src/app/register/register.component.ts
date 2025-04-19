@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { DoctorListService } from '../services/doctor-list.service';
 @Component({
   selector: 'app-register',
   standalone: false,
@@ -11,14 +11,12 @@ export class RegisterComponent {
 
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder , private doctorListService : DoctorListService) {
     this.registerForm = this.fb.group({
       name: ['', Validators.required],
       specialization: ['', Validators.required],
       experience: ['', [Validators.required, Validators.min(0)]],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-      confirmPassword: ['', Validators.required]
+      contact_info: ['', [Validators.required, Validators.email]],
     });
   }
 
@@ -26,7 +24,16 @@ export class RegisterComponent {
     if (this.registerForm.valid) {
       const user = this.registerForm.value;
       console.log('User registered:', user);
-      // TODO: Handle submission
+      this.doctorListService.registerDoctor(user).subscribe({
+          next: () => {
+            console.log('Doctor successfully registered.');
+            this.registerForm.reset(); // ✅ Clear the form
+          },
+          error: (err:any) => {
+            console.error('Error registering doctor:', err);
+          }
+        });
+
     } else {
       console.log('Form is invalid');
     }

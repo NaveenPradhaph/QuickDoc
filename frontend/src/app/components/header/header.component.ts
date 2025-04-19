@@ -16,4 +16,13 @@ export class HeaderComponent {
   goRegister(){
     this.router.navigate(['register']);
   }
+  goBook(){
+    this.router.navigate(['appointment']);
+  }
+  isOnRegisterPage(): boolean {
+    return this.router.url.includes('/register');
+  }
+  isOnAppointmentPage(): boolean {
+    return this.router.url.includes('/appointment');
+  }
 }

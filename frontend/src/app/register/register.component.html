@@ -1,31 +1,81 @@
-<div class="min-h-screen bg-gray-100 flex items-center justify-center px-4">
-  <div class="w-full max-w-md bg-white p-6 rounded-xl shadow-md">
-    <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">Register</h2>
+<app-header/>
+<div class="px-40 flex flex-1 justify-center py-5">
+  <div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1">
+    <h3 class="text-[#0e141b] tracking-light text-2xl font-bold leading-tight px-4 text-left pb-2">
+      Register as a Doctor
+    </h3>
 
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="space-y-4">
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-        <input formControlName="name" type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <!-- Full Name -->
+      <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+        <label class="flex flex-col min-w-40 flex-1">
+          <p class="text-[#0e141b] text-base font-medium leading-normal pb-2">Full Name*</p>
+          <input
+            formControlName="name"
+            placeholder="Enter your full name"
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e141b] focus:outline-0 focus:ring-0 border border-[#d0dbe7] bg-slate-50 focus:border-[#d0dbe7] h-14 placeholder:text-[#4e7397] p-[15px] text-base font-normal leading-normal"
+          />
+        </label>
       </div>
 
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Specialization</label>
-        <input formControlName="specialization" type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <!-- Specialization -->
+      <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+        <label class="flex flex-col min-w-40 flex-1">
+          <p class="text-[#0e141b] text-base font-medium leading-normal pb-2">Specialization*</p>
+          <select
+            formControlName="specialization"
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e141b] focus:outline-0 focus:ring-0 border border-[#d0dbe7] bg-slate-50 focus:border-[#d0dbe7] h-14 placeholder:text-[#4e7397] p-[15px] text-base font-normal leading-normal"
+          >
+            <option value="">Select your specialization</option>
+            <option value="Cardiologist">Cardiologist</option>
+            <option value="Dermatologist">Dermatologist</option>
+            <option value="Endocrinologist">Endocrinologist</option>
+            <option value="Gastroenterologist">Gastroenterologist</option>
+            <option value="Hematologist">Hematologist</option>
+            <option value="Neurologist">Neurologist</option>
+            <option value="Oncologist">Oncologist</option>
+            <option value="Pediatrician">Pediatrician</option>
+            <option value="Psychiatrist">Psychiatrist</option>
+            <option value="Rheumatologist">Rheumatologist</option>
+          </select>
+        </label>
       </div>
 
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Experience (in years)</label>
-        <input formControlName="experience" type="number" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <!-- Experience -->
+      <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+        <label class="flex flex-col min-w-40 flex-1">
+          <p class="text-[#0e141b] text-base font-medium leading-normal pb-2">Experience*</p>
+          <input
+            formControlName="experience"
+            type="number"
+            placeholder="Enter your years of experience"
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e141b] focus:outline-0 focus:ring-0 border border-[#d0dbe7] bg-slate-50 focus:border-[#d0dbe7] h-14 placeholder:text-[#4e7397] p-[15px] text-base font-normal leading-normal"
+          />
+        </label>
       </div>
 
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-        <input formControlName="email" type="email" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <!-- Contact Info -->
+      <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+        <label class="flex flex-col min-w-40 flex-1">
+          <p class="text-[#0e141b] text-base font-medium leading-normal pb-2">Contact Info*</p>
+          <input
+            formControlName="contact_info"
+            placeholder="Enter your email"
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e141b] focus:outline-0 focus:ring-0 border border-[#d0dbe7] bg-slate-50 focus:border-[#d0dbe7] h-14 placeholder:text-[#4e7397] p-[15px] text-base font-normal leading-normal"
+          />
+        </label>
       </div>
 
-      <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition">
-        Register
-      </button>
+      <!-- Submit -->
+      <div class="px-4 py-4">
+        <button
+          type="submit"
+          [disabled]="!registerForm.valid"
+          class="bg-[#0e141b] text-white font-semibold py-3 px-6 rounded-xl hover:bg-[#1f2a38] transition duration-200"
+        >
+          Submit
+        </button>
+      </div>
     </form>
   </div>
 </div>

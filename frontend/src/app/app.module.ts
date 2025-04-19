@@ -13,6 +13,16 @@ import { MatTableModule } from '@angular/material/table';
 import { SpecializationComponent } from './specialization/specialization.component';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { AppointmentsComponent } from './appointments/appointments.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +33,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     DoctorNameFilterPipe,
     SpecializationComponent,
     RegisterComponent,
+    AppointmentsComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +41,13 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     FormsModule,
     MatTableModule,
     MatPaginatorModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatNativeDateModule,
+    MatDatepickerModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]
